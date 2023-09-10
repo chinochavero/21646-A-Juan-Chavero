@@ -1,0 +1,22 @@
+
+
+
+GET http://localhost:3001/api/tareas
+
+POST http://localhost:3001/api/tareas
+Content-Type: application/json
+{
+    "titulo": "Nuevo titulo",
+    "contenido": "Nuevo contenido",
+    "imagen_post": "www.url.com"
+}
+
+PUT http://localhost:3001/api/tareas/1
+Content-Type: application/json
+{
+    "titulo": "Nuevo titulo",
+    "contenido": "Nuevo contenido",
+    "imagen_post": "www.url.com"
+}
+
+DELETE http://localhost:3001/api/tareas/1

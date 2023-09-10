@@ -44,7 +44,7 @@ export const ctrlUpdateTareas = async(req, res) => {
         })
     }
 }
-export const ctrlDeleteTareas = (req, res) => {
+export const ctrlDeleteTareas = async (req, res) => {
     const { id } = req.params
     try {
         const tareaBorrada = await modeloPost.destroy({
