@@ -1,13 +1,15 @@
 import { Router } from "express";
+import { ctrlCreateTareas, ctrlDeleteTareas, ctrlGetTareas, ctrlUpdateTareas } from "../controllers/controladores.tareas.js";
+import { crearPostSchema, editarPostSchema } from "../models/schemas/post.schema.js";
 
 const rutaDeTareas = Router()
 
-rutaDeTareas.get("/api/tareas")
+rutaDeTareas.get("/api/tareas", ctrlGetTareas)
 
-rutaDeTareas.post("/api/tareas")
+rutaDeTareas.post("/api/tareas", crearPostSchema, validator, ctrlCreateTareas)
 
-rutaDeTareas.put("/api/tareas/:id")
+rutaDeTareas.put("/api/tareas/:id", editarPostSchema, validator, ctrlUpdateTareas)
 
-rutaDeTareas.delete("/api/tareas/:id")
+rutaDeTareas.delete("/api/tareas/:id", ctrlDeleteTareas)
 
 export { rutaDeTareas }
