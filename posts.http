@@ -1,9 +1,10 @@
 
 
-
+### Traer los Posts
 GET http://localhost:3001/api/tareas
 
 
+### Crear los Posts
 POST http://localhost:3001/api/tareas
 Content-Type: application/json
 {
@@ -12,7 +13,7 @@ Content-Type: application/json
     "imagen_post": "www.url.com"
 }
 
-
+### Actualizar los Posts
 PUT http://localhost:3001/api/tareas/1
 Content-Type: application/json
 {
@@ -21,5 +22,5 @@ Content-Type: application/json
     "imagen_post": "www.url.com"
 }
 
-
+### Borrar los Posts
 DELETE http://localhost:3001/api/tareas/1

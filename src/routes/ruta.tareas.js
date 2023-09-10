@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { ctrlCreateTareas, ctrlDeleteTareas, ctrlGetTareas, ctrlUpdateTareas } from "../controllers/controladores.tareas.js";
 import { crearPostSchema, editarPostSchema } from "../models/schemas/post.schema.js";
-
+import { validator } from "../middlewares/validator.js";
+ 
 const rutaDeTareas = Router()
 
 rutaDeTareas.get("/api/tareas", ctrlGetTareas)
