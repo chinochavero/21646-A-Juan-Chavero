@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 
-const sequelize = new Sequelize("db_tasks", "root", "", {
+export const sequelize = new Sequelize("db_tasks", "root", "", {
 	host: "localhost",
 	dialect: "mysql"
 	});
