@@ -7,18 +7,20 @@ GET http://localhost:3001/api/tareas
 ### Crear los Posts
 POST http://localhost:3001/api/tareas
 Content-Type: application/json
+
 {
-    "titulo": "Nuevo titulo",
-    "contenido": "Nuevo contenido",
+    "titulo": "Tercer titulo",
+    "contenido": "Tercer contenido",
     "imagen_post": "www.url.com"
 }
 
 ### Actualizar los Posts
-PUT http://localhost:3001/api/tareas/1
+PUT http://localhost:3001/api/tareas/4
 Content-Type: application/json
+
 {
-    "titulo": "Nuevo titulo",
-    "contenido": "Nuevo contenido",
+    "titulo": "Cambiando titulo",
+    "contenido": "Agregando contenido",
     "imagen_post": "www.url.com"
 }
 

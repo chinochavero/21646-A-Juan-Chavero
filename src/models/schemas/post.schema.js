@@ -8,6 +8,7 @@ export const crearPostSchema = [
     .isString().withMessage("Debe ser un string")
     .notEmpty().withMessage("El post no debe estar vacio"),
     body("imagen_post")
+    .optional()
     .isURL().withMessage("Ingrese una URL válida")
 ]
 

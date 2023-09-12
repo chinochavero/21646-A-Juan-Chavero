@@ -14,6 +14,7 @@ export const modeloPost = sequelize.define("Posts", {
         type: DataTypes.STRING,
         allowNull: false
     }
+    
     }, {
         timestamps: true
 })
