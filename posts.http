@@ -21,7 +21,7 @@ Content-Type: application/json
 {
     "titulo": "Cambiando titulo",
     "contenido": "Agregando contenido",
-    "imagen_post": "www.url.com"
+    "imagen_post": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrAfOnAn5iZjMpsg6cEP-q09U_w7YMESWWhA&usqp=CAU"
 }
 
 ### Borrar los Posts
