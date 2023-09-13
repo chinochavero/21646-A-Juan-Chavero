@@ -1,6 +1,10 @@
 import { modeloPost } from "../models/Tasks.js"
 
 
+export const ctrlView = (req, res) => {
+    res.render("index.ejs")
+}
+
 export const ctrlGetTareas = async (req, res) => {
     try {
         const tarea = await modeloPost.findAll();
