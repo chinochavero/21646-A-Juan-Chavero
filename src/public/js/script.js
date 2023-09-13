@@ -105,29 +105,3 @@ form.addEventListener("submit", (evento) => {
 });
 
 
-fetch("http://localhost:3001/api/tareas")
-    .then(res => res.json())
-    .then(data => {
-        data.forEach(post => {
-            html += `
-            <article class="col-4 d-flex justify-content-center mb-3" data id="${post.id}">
-                <div class="card" style="width: 18rem;">
-                    <img src="${post.imagen_post}" class="card-img-top" alt="...">
-                        
-                        <div class="card-body">
-                            <h5 class="card-title">${post.titulo}</h5>
-                            <p class="card-text">${post.contenido}</p>                                                                         
-                        <div>
-                            <a class="btn btn-secondary" id="btn-editar">Editar</a>
-                            <a class="btn btn-danger" id="btn-borrar">Borrar</a>
-                        </div>
-                        <div>
-                            <p class="card-fecha d-flex justify-content-end" id="fecha">${new Date(post.createdAt).toLocaleDateString()}</p>
-                        </div>
-                        </div>
-                </div>
-            </article>
-            `
-            contenedor.innerHTML = html
-        });
-    })

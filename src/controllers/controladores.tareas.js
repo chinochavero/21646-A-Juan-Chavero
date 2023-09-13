@@ -1,8 +1,17 @@
 import { modeloPost } from "../models/Tasks.js"
 
 
-export const ctrlView = (req, res) => {
-    res.render("index.ejs")
+export const ctrlView = async (req, res) => {
+    try {
+        const posteos = await modeloPost.findAll();
+        res.render("index.ejs", {posteos})
+                
+    } catch (error) {
+        console.error(error)
+        return res.status(500).json({
+            message: "Error de Servidor"
+        })
+    }
 }
 
 export const ctrlGetTareas = async (req, res) => {
