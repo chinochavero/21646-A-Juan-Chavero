@@ -1,5 +1,13 @@
 #fecha {
      font-size: 12px;
-     
-    
 }
+
+.btn {
+     transition: transform .2s;
+}
+.btn:hover {
+     transform: scale(1.1);
+}
+
+
+  

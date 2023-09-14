@@ -5,6 +5,7 @@ import { startDb } from "./src/config/database.js";
 import path from "node:path"
 import cors from "cors"
 import { fileURLToPath } from "node:url"
+import swal from 'sweetalert';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)

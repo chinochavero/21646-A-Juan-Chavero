@@ -28,6 +28,17 @@ document.addEventListener("click", (evento) => {
         const article = evento.target.closest(".col-4")
         const idArticle = article.id;
 
+        Swal.fire({
+            title: 'Estás seguro?',
+            text: "No se podrá revertir la acción",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, quiero borrarlo!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+
         fetch(`http://localhost:3001/api/tareas/${idArticle}`, {
             method: "DELETE"
         }).then(res => {
@@ -37,8 +48,17 @@ document.addEventListener("click", (evento) => {
         }).catch(error => {
             console.error(error)
         })
-    }
+        Swal.fire(
+            'Borrado!',
+            'Tu Post a sido eliminado.',
+            'success'
+          )
+       }
+    })
+  }
 })
+
+
 
 document.addEventListener("click", (evento) => {
     if (evento.target.matches("#btn-editar")) {
@@ -66,6 +86,15 @@ form.addEventListener("submit", (evento) => {
             imagen_post: inputImagen.value,
                                                        
         };
+    // if (inputTitulo.value === "" || inputContenido.value === "" ) {
+    //     Swal.fire("Por favor, debes completar los tres campos")
+    // }; 
+        if (inputTitulo.value === "") {
+            Swal.fire("Por favor ingresa un título.")
+        } else if (inputContenido.value === "") {
+            Swal.fire("Por favor ingresa contenido.")
+        } 
+                
         fetch("http://localhost:3001/api/tareas", {
             method: "POST",
             headers: {
@@ -74,12 +103,13 @@ form.addEventListener("submit", (evento) => {
             body: JSON.stringify(nuevoPost),
         }).then((res) => {
             if (res.ok) {
-                alert("Tarea creada con exito");
-                myModal.hide();
-                location.reload();
-            }
+                Swal.fire('Post creado correctamente').then( () => {
+                    myModal.hide()
+                    location.reload()
+                }); 
+            };
         });
-    }
+    };
     if (option === "editar") {
         const nuevoPost = {
             titulo: inputTitulo.value,
@@ -87,6 +117,12 @@ form.addEventListener("submit", (evento) => {
             imagen_post: inputImagen.value,
           
         };
+
+        if (inputTitulo.value === "") {
+            Swal.fire("Por favor ingresa un título.")
+        } else if (inputContenido.value === "") {
+            Swal.fire("Por favor ingresa contenido.")
+        } 
 
         fetch(`http://localhost:3001/api/tareas/${idformulario}`, {
             method: "PUT",
@@ -96,12 +132,15 @@ form.addEventListener("submit", (evento) => {
             body: JSON.stringify(nuevoPost)
         }).then(res => {
             if (res.ok) {
-                alert("Post editado correctamente")
-                myModal.hide();
-                location.reload();
+                Swal.fire("Post editado correctamente").then ( () => {
+                myModal.hide()
+                location.reload()
+                })
             }
         })
     }
 });
 
 
+
+ 
