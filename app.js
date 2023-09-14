@@ -7,7 +7,7 @@ import cors from "cors"
 import { fileURLToPath } from "node:url"
 import swal from 'sweetalert';
 import helmet from "helmet";
-import morgan from "morgan";
+
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -19,7 +19,7 @@ app.use(cors())
 app.use(helmet({
     contentSecurityPolicy: false
 }))
-app.use(morgan(dev))
+
 
 
 // Lo tuve que hacer asi porque no me tomaba las carpetas en el directotio public
