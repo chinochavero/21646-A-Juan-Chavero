@@ -19,7 +19,7 @@ app.use(cors())
 app.use(helmet({
     contentSecurityPolicy: false
 }))
-app.use(morgan(dev))
+app.use(morgan("dev"))
 
 
 // Lo tuve que hacer asi porque no me tomaba las carpetas en el directotio public
