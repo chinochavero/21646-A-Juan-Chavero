@@ -1,3 +1,12 @@
+body {
+     background-image: url(Delorian.jpg);
+     background-position: center center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+}
+
+
 #fecha {
      font-size: 12px;
 }
@@ -9,5 +18,31 @@
      transform: scale(1.1);
 }
 
+.card {
+     border-radius: 60px;
+     padding: 10px;
+}
 
-  
+.card-img-top {
+     height: 300px;
+     object-fit: cover;     
+     border-radius: 60px;  
+     border: 1px solid grey;    
+}
+
+.card-text {
+     overflow: auto;
+}
+
+h1 {
+     text-transform: uppercase;
+     color: white;
+}
+
+.descripcion {
+     text-align: center;
+     color: white;
+     padding: 5px;
+     background: rgba(0, 0, 0, 0.5);
+}
+ 

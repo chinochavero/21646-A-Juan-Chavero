@@ -3,14 +3,14 @@
 <header class="d-flex justify-content-center">
     <h1>Bienvenidos a mi Blog</h1>
 </header>
-
+    <p class="descripcion">Usaré este espacio para transmitir mis ideas y pasiones</p>
 <main class="d-flex flex-column align-items-center">
     <button type="button" class="btn btn-primary mb-3" id="btn-new">Nuevo Post</button>
       <div class="container text-center">
         <div class="row" id="container-row">
             <% posteos.forEach(post => { %>
-              <article class="col-4 d-flex justify-content-center mb-3" data id="<%= post.id %>">
-                <div class="card" style="width: 18rem;">
+              <article class="col-lg d-flex justify-content-center mb-3" data id="<%= post.id %>">
+                <div class="card" style="width: 36rem;">
                     <img src="<%= post.imagen_post %>" class="card-img-top" alt="...">
                         
                         <div class="card-body">
@@ -21,7 +21,7 @@
                             <a class="btn btn-danger" id="btn-borrar">Borrar</a>
                         </div>
                         <div>
-                            <p class="card-fecha d-flex justify-content-end" id="fecha"><%= new Date(post.createdAt).toLocaleDateString() %></p>
+                            <p class="card-fecha d-flex justify-content-end mt-3 mb-0" id="fecha">Creado el <%= (post.createdAt).toLocaleDateString() %> por Juan Manuel Chavero</p>
                         </div>
                         </div>
                 </div>
@@ -34,7 +34,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Creador de Posts</h1>
+            <h2 class="modal-title fs-5" id="exampleModalLabel">Creador de Posts</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

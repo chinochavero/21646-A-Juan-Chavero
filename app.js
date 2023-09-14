@@ -15,7 +15,8 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
-app.use(express.static(path.join(__dirname + "/src/public")))
+// Lo tuve que hacer asi porque no me tomaba las carpetas en el directotio public
+app.use(express.static(path.join(__dirname + "/src/public"))) 
 
 
 app.set("views", path.join(__dirname, "src", "views"))

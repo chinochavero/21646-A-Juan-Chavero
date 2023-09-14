@@ -16,7 +16,7 @@ let idformulario = ""
 
 botonCrear.addEventListener("click", () => {
     option = "new"
-    botonGuardar.textContent = "Nuevo"
+    botonGuardar.textContent = "Crear"
     inputTitulo.value = ""
     inputContenido.value = ""
     inputImagen.value = ""
@@ -25,7 +25,7 @@ botonCrear.addEventListener("click", () => {
 
 document.addEventListener("click", (evento) => {
     if (evento.target.matches("#btn-borrar")) {
-        const article = evento.target.closest(".col-4")
+        const article = evento.target.closest(".col-lg")
         const idArticle = article.id;
 
         Swal.fire({
@@ -62,7 +62,7 @@ document.addEventListener("click", (evento) => {
 
 document.addEventListener("click", (evento) => {
     if (evento.target.matches("#btn-editar")) {
-        const article = evento.target.closest(".col-4")
+        const article = evento.target.closest(".col-lg")
         const idArticle = article.id;
         const editarUrlImagen = article.children[0].children[0].src;
         const editarTitulo = article.children[0].children[1].children[0].textContent;
@@ -86,12 +86,12 @@ form.addEventListener("submit", (evento) => {
             imagen_post: inputImagen.value,
                                                        
         };
-    // if (inputTitulo.value === "" || inputContenido.value === "" ) {
-    //     Swal.fire("Por favor, debes completar los tres campos")
+    // if (inputTitulo.value === "" || inputContenido.value === "" ) {   aqui trataba de validar de una forma pero no me convencio.
+    //     Swal.fire("Por favor, debes completar los tres campos")       La validacion de URL lo hace el HTML
     // }; 
         if (inputTitulo.value === "") {
-            Swal.fire("Por favor ingresa un título.")
-        } else if (inputContenido.value === "") {
+            Swal.fire("Por favor ingresa un título.")                   //aqui se validan que los campos no esten vacios y si esta todo bien 
+        } else if (inputContenido.value === "") {                       //hace el fetch
             Swal.fire("Por favor ingresa contenido.")
         } 
                 
