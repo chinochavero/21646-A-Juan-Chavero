@@ -19,12 +19,6 @@ app.use(cors())
 app.use(helmet({
     contentSecurityPolicy: false
 }))
-<<<<<<< HEAD
-
-=======
-app.use(morgan("dev"))
->>>>>>> d872b629af5149d5deccfa2392ae24f333da3801
-
 
 // Lo tuve que hacer asi porque no me tomaba las carpetas en el directotio public
 app.use(express.static(path.join(__dirname + "/src/public"))) 
